@@ -1,0 +1,43 @@
+stages:
+  - build
+  - deploy
+  - notify
+
+variables:
+  AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+  AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+  AWS_REGION: $AWS_REGION
+  S3_BUCKET_NAME: $S3_BUCKET_NAME
+  CDN_DISTRIBUTION_ID: $CDN_DISTRIBUTION_ID
+
+build:
+  stage: build
+  image: jojomi/hugo:0.82.0
+  script:
+    - hugo version
+    - hugo -d public --minify
+  artifacts:
+    paths:
+      - public/
+    expire_in: 1 day
+
+deploy:
+  stage: deploy
+  only:
+    - master
+  image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
+  environment:
+    name: prod
+    url: https://ressources.ruche-labs.net
+  script:
+    - aws s3 cp public/ s3://$S3_BUCKET_NAME/ --recursive --include "*"
+    - aws cloudfront create-invalidation --distribution-id $CDN_DISTRIBUTION_ID --paths "/*"
+
+#notify:
+#  stage: notify
+#  only:
+#    - master
+#  image: curlimages/curl:7.76.1
+#  script:
+#    - echo $CI_COMMIT_MESSAGE
+#    - ./notify.sh $SLACK_HOOK_URL "$CI_COMMIT_MESSAGE"
