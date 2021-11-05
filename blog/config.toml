@@ -1,3 +1,7 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseURL = "https://nicosvg.github.io/site-cse-labs"
+languageCode = "fr-fr"
+title = "CSE Talan Labs"
+theme = "blist"
+
+DefaultContentLanguage = "fr"
+DefaultContentLanguageInSubdir = true
