@@ -18,16 +18,14 @@ DefaultContentLanguageInSubdir = true
         name = "Blog"
         url = "blog"
         weight = 1
-
-[[languages.fr.menu.main]]
-    name = "About"
-    url = "page/about/"
-    weight = 2
-
-[[languages.fr.menu.main]]
-name = "Tags"
-url = "tags"
-weight = 3
+    [[languages.fr.menu.main]]
+        name = "About"
+        url = "page/about/"
+        weight = 2
+    [[languages.fr.menu.main]]
+        name = "Tags"
+        url = "tags"
+        weight = 3
 
 [params]
     # Enable the darkmode toggle in header
