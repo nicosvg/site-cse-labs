@@ -2,6 +2,7 @@ baseURL = "https://nicosvg.github.io/site-cse-labs"
 languageCode = "fr-fr"
 title = "CSE Talan Labs"
 theme = "blist"
+canonifyURLs = true
 
 DefaultContentLanguage = "fr"
 DefaultContentLanguageInSubdir = true

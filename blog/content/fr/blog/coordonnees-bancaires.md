@@ -4,7 +4,7 @@ title: "Coordonnées bancaires"
 date: 2021-11-05
 description: "Informations de paiement"
 tags: ["infos"]
-thumbnail: ./piggy.jpg
+thumbnail: /piggy.jpg
 ---
 
 Lorsque vous souhaitez payer votre commande, réserver votre place à une activité, le plus simple pour nous (et pour vous) est le virement.
