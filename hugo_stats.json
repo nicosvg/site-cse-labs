@@ -3,13 +3,11 @@
     "tags": [
       "!doctype",
       "a",
-      "a\n",
       "aside",
       "body",
       "button",
       "code",
       "div",
-      "div\n",
       "footer",
       "h1",
       "h2",
@@ -26,7 +24,6 @@
       "script",
       "section",
       "span",
-      "span\n",
       "style",
       "time",
       "title"
